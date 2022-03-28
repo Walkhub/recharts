@@ -6,12 +6,17 @@ import React, { PureComponent, CSSProperties, ReactNode } from 'react';
 import classNames from 'classnames';
 import { isNumOrStr } from '../util/DataUtils';
 
+type Value = number | string;
+
 function defaultFormatter<T>(value: T) {
-  return _.isArray(value) && isNumOrStr(value[0]) && isNumOrStr(value[1]) ? value.join(' ~ ') : value;
+  if (Array.isArray(value) && isNumOrStr(value[0]) && isNumOrStr(value[1])) {
+    return value.join(" ~ ");
+  }
+  return value;
 }
 
 export type TooltipType = 'none';
-export type ValueType = number | string | Array<number | string>;
+export type ValueType = Value | [Value, Value];
 export type NameType = number | string;
 export type Formatter<TValue extends ValueType, TName extends NameType> = (
   value: TValue,

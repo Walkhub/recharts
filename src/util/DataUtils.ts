@@ -11,7 +11,7 @@ export const mathSign = (value: number) => {
   return -1;
 };
 
-export const isPercent = (value: string | number) => _.isString(value) && value.indexOf('%') === value.length - 1;
+export const isPercent = (value: string | number) => typeof value === "string" && value.indexOf('%') === value.length - 1;
 
 export const isNumber = (value: any) => _.isNumber(value) && !_.isNaN(value);
 

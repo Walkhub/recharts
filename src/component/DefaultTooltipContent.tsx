@@ -46,7 +46,7 @@ export interface Props<TValue extends ValueType, TName extends NameType> {
   contentStyle?: CSSProperties;
   itemStyle?: CSSProperties;
   labelStyle?: CSSProperties;
-  labelFormatter?: (label: any, payload: Array<Payload<TValue, TName>>) => ReactNode;
+  labelFormatter?: (label: any, payload?: Array<Payload<TValue, TName>>) => ReactNode;
   label?: any;
   payload?: Array<Payload<TValue, TName>>;
   itemSorter?: (item: Payload<TValue, TName>) => number | string;

@@ -11,11 +11,12 @@ export const mathSign = (value: number) => {
   return -1;
 };
 
-export const isPercent = (value: string | number) => typeof value === "string" && value.indexOf('%') === value.length - 1;
+export const isPercent = (value: string | number) =>
+  typeof value === 'string' && value.indexOf('%') === value.length - 1;
 
 export const isNumber = (value: any) => _.isNumber(value) && !_.isNaN(value);
 
-export const isNumOrStr = (value: number | string) => isNumber(value as number) || _.isString(value);
+export const isNumOrStr = (value?: number | string) => isNumber(value as number) || _.isString(value);
 
 let idCounter = 0;
 export const uniqueId = (prefix?: string) => {

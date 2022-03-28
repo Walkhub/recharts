@@ -10,7 +10,7 @@ type Value = number | string;
 
 function defaultFormatter<T>(value: T) {
   if (Array.isArray(value) && isNumOrStr(value[0]) && isNumOrStr(value[1])) {
-    return value.join(" ~ ");
+    return value.join(' ~ ');
   }
   return value;
 }
